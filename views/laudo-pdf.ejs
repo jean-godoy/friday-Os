@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/css/pikasso.css"> -->
+    <title>Laudo PDF</title>
+</head>
+
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 90%;
+        min-height: 90%;
+        margin: 10px auto;
+        margin-top: 20px;
+        padding: 5px;
+        border: 1px solid black;
+        /* background-color: red; */
+        text-align: center;
+    }
+
+    .ordem {
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding: 5px 0;
+    }
+
+    .box-desc {
+        width: 100%;
+        height: 90px;
+        padding: 5px 15px;
+    }
+
+
+
+    .card-laudo {
+        margin: 0 auto;
+        width: 100%;
+        height: 35px;
+        padding: 5px 15px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    .left {
+        text-align: left;
+        float: left;
+    }
+
+    .right {
+        text-align: right;
+        float: right;
+    }
+
+    .card-alert {
+        margin: 0 auto;
+        width: 60%;
+        font-size: 8px;
+        padding: 10px 0;
+    }
+
+    .card-cliente {
+        border-top: 1px solid black;
+        margin: 0 auto;
+        padding: 5px 15px;
+        width: 100%;
+        height: 120px;
+        /* background-color: brown; */
+    }
+
+    .card-span-cliente {
+        float: left;
+        width: 48%;
+        height: 35px;
+        margin-left: 2%;
+        padding: 5px 15px;
+        text-align: left;
+        /* background-color: blueviolet; */
+    }
+
+    .card-dispositivo {
+        border-top: 1px solid black;
+        margin: 0 auto;
+        padding: 5px 15px;
+        width: 100%;
+        height: 100px;
+    }
+
+    .card-span-device {
+        margin: 0 auto;
+        float: left;
+        width: 30%;
+        height: 35px;
+        text-align: left;
+        margin-left: 1%;
+    }
+
+    .card-defeito {
+        border-top: 1px solid black;
+        margin: 10px auto;
+        width: 100%;
+        height: 80px;
+        padding: 10px 15px;
+    }
+
+    .card-span-defeito {
+        margin: 0 auto;
+        float: left;
+        width: 100%;
+        height: 30px;
+        /* background-color: brown; */
+        text-align: left;
+    }
+
+    .card-laudo-tecnico {
+        border-top: 1px solid black;
+        margin: 10px auto;
+        width: 100%;
+        min-height: 80px;
+        padding: 10px 15px;
+    }
+
+    .card-ul {
+        width: 100%;
+    }
+
+    .card-li {
+        margin: 0 auto;
+        padding: 5px 15px;
+        width: 90%;
+        height: 40px;
+        text-align: left;
+        border-bottom: 1px solid rgb(168, 164, 164);
+    }
+
+    .card-valor-t{
+        width: 90%;
+        margin: 5px auto;
+        height: 40px;
+    }
+
+    .card-ass{
+        margin: 5px auto;
+        width: 80%;
+        height: 50px;
+        border-bottom: 1px solid black;
+    }
+
+</style>
+
+<body>
+
+    <div class="container">
+
+        <span class="ordem">
+
+            <h1 class="ordem">Registro de Ordem De Serviço e Manutenção</h1>
+        </span>
+
+        <div class="box-desc">
+            <h2>MW-SOLUÇÕES EM INFORMATICA</h2>
+            <h3>RUA JACKSON, N° 147, BAIRRO TAPAJOS - INDAIAL/SC</h3>
+            <span class="span-desc"><b>TEL: </b>(47) 3333-2911 - <b>CEL: </b>(47) 9.9936-3671 - <b>E-mail: </b>erhardt@gmail.com </span>
+        </div>
+
+        <div class="card-laudo">
+            <span class="left"><b>Técnico Responsavel: </b>Erhard</span>
+            <span class="right"><b>Número Ordem de Serviço: </b> <%= data.id_laudo %> </span>
+        </div>
+
+        <div class="card-alert">
+            <p>
+                O CLIENTE DEVERA RETIRAR O EQUIPAMENTO ATE 30 DIAS APÓS A EXECUÇÃO DO SERVIÇO SOB PENA DE TAXA DE
+                HOSPEDAGEM E GUARDA DO
+                EQUIPAMENTO E COBRANÇA ATUALIZADA DE PEÇAS INSTALADAS APÓS ESTE PERIODO - SERA COBRADA TAXA DE R$ 15,00
+                DE DESLOCAMENTO EM
+                VISITAS TECNICAS MAIS HORA TECNICA - SERA COBRADO TAXA DE R$15,OO DE ANALIZE DE EQUIPAMENTO CASO HOUVER
+                CONSERTO NÃO AUTORIZADO
+
+            </p>
+        </div>
+
+
+        <div class="card-cliente">
+            <h3>Cliente</h3>
+            <span class="card-span-cliente"><b>Nome: </b> <%= data.nome_cliente %> </span>
+            <span class="card-span-cliente"><b>Número Ordem de Serviço: </b><%= data.id_laudo %></span>
+            <span class="card-span-cliente"><b>Tel/Cel: </b> <%= data.telefone %> </span>
+            <span class="card-span-cliente"><b>CPF: </b><%= data.cpf %></span>
+
+        </div>
+
+        <div class="card-dispositivo">
+            <h3>Equipamento</h3>
+            <span class="card-span-device"><b>Data Entrada: </b><%= dateOut.data_entrada %></span>
+            <span class="card-span-device"><b>Data Saida: </b><%= dateOut.data_saida %></span>
+            <span class="card-span-device"><b>Número Série: </b><%= data.numero_serie %></span>
+            <span class="card-span-device"><b>Equipamento: </b><%= data.equipamento %></span>
+            <span class="card-span-device"><b>Marca: </b><%= data.marca %></span>
+            <span class="card-span-device"><b>Modelo: </b><%= data.modelo %></span>
+        </div>
+
+        <div class="card-defeito">
+            <span class="card-span-defeito"><b>Defeito Relatado: </b><%= data.defeito_relatado %></span>
+            <span class="card-span-defeito"><b>Defeito Apresentado: </b><%= data.defeito_apresentado %></span>
+        </div>
+
+        <div class="card-laudo-tecnico">
+            <h3>Laudo Técnico:</h3>
+            <ul class="card-ul">
+                <% laudo.map(item => { %>
+                <li class="card-li">
+                    <span> <%= item.laudo %> </span>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+
+        <div class="card-laudo-tecnico">
+            <h3>Descrição do Produto:</h3>
+            <ul class="card-ul">
+                <% descricao.map(item => { %>
+                <li class="card-li" key={item.id}>
+                    <span>  <%= item.descricao %> </span>
+                    <span class="right"> <b>R$</b> <%= item.valor %> </span>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+
+        <div class="card-valor-t">
+            <span class="right" ><b>Valor Total R$: </b> <%= data.valor_total %> </span>
+        </div>
+
+        <div class="card-ass">
+            <span><b>Assinatura do Cliente</b></span>
+            <div class="line"></div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

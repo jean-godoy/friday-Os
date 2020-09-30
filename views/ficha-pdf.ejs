@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Entrada</title>
+</head>
+
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .left {
+        text-align: left;
+        float: left;
+    }
+
+    .right {
+        text-align: right;
+        float: right;
+    }
+
+    .container {
+        max-width: 90%;
+        min-height: 90%;
+        margin: 10px auto;
+        margin-top: 20px;
+        padding: 5px;
+        border: 1px solid black;
+        /* background-color: red; */
+        text-align: center;
+    }
+
+    .box-desc {
+        width: 100%;
+        height: 90px;
+        padding: 5px 15px;
+        border-bottom: 1px solid black;
+    }
+
+    .box-cliente {
+        width: 90%;
+        height: 300px;
+        margin: 10px auto;
+    }
+
+    .text-group {
+        width: 42%;
+        height: 30px;
+        margin: 5px auto;
+        padding: 5px 15px;
+        text-align: left;
+        float: left;
+        border-left: 5px solid #333;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .card-alert {
+        margin: 0 auto;
+        width: 60%;
+        font-size: 8px;
+        padding: 10px 0;
+    }
+
+    .box-equipamento{
+        margin: 10px auto;
+        width: 60%;
+    }
+
+    .line{
+        width: 100%;
+        height: 50px;
+        margin: 20px 0;
+        border-bottom: 1px dashed #444;
+    }
+
+
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="box-desc">
+            <h2>MW-SOLUÇÕES EM INFORMATICA</h2>
+            <h3>RUA JACKSON, N° 147, BAIRRO TAPAJOS - INDAIAL/SC</h3>
+            <span class="span-desc"><b>TEL: </b>(47) 3333-2911 - <b>CEL: </b>(47) 9.9936-3671 - <b>E-mail: </b>erhardrw@gmail.com </span>
+        </div>
+
+        <div class="card-alert">
+            <p>
+                O CLIENTE DEVERA RETIRAR O EQUIPAMENTO ATE 30 DIAS APÓS A EXECUÇÃO DO SERVIÇO SOB PENA DE TAXA DE
+                HOSPEDAGEM E GUARDA DO
+                EQUIPAMENTO E COBRANÇA ATUALIZADA DE PEÇAS INSTALADAS APÓS ESTE PERIODO - SERA COBRADA TAXA DE R$ 15,00
+                DE DESLOCAMENTO EM
+                VISITAS TECNICAS MAIS HORA TECNICA - SERA COBRADO TAXA DE R$15,OO DE ANALIZE DE EQUIPAMENTO CASO HOUVER
+                CONSERTO NÃO AUTORIZADO
+
+            </p>
+        </div>
+
+        <div class="box-equipamento">
+            <span class="left"><b>Equipamento: </b> <%= data.dispositivo %> </span>
+            <span class="right"><b>Número de Série: </b><%= data.numero_serie %></span>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="header">
+            <h3>FICHA DE ENTRADA DE EQUIPAMENTO</h3>
+        </div>
+
+        <div class="box-cliente">
+
+            <div class="text-group">
+                <span><b>Nome: </b><%= data.nome %></span>
+                <span>Jean</span>
+            </div>
+
+            <div class="text-group">
+                <span><b>Equipamento</b></span>
+                <span><%= data.dispositivo %></span>
+            </div>
+
+            <div class="text-group">
+                <span>
+                    <b>Marca</b>
+                </span>
+                <span><%= data.marca %></span>
+            </div>
+
+            <div class="text-group">
+                <span><b>Modelo:</b></span>
+                <span><%= data.modelo %></span>
+            </div>
+
+            <div class="text-group">
+                <span><b>Número de Série</b></span>
+                <span><%= data.numero_serie %></span>
+            </div>
+
+            <div class="text-group">
+                <span><b>Defeito Relatado:</b></span>
+                <span><%= data.defeito_relatado %></span>
+            </div>
+
+            <div class="text-group">
+                <span><b>Telefone:</b></span>
+                <span><%= data.telefone %></span>
+            </div>
+
+            <div class="text-group">
+                <span><b>Data Entrada:</b></span>
+                <span><%= date %></span>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
