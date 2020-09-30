@@ -5,14 +5,10 @@ const express = require('express');
 // const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const app = express();
-const Products = require('./models/Products');
-const User = require('./models/User');
-const Customers = require('./models/Customers')
+
 const cors = require('cors');
 const path = require('path');
 const ejs = require('ejs');
-
-const Ordem = require('./models/OrdemEntrada');
 
 const db = require('./models/sql');
 
